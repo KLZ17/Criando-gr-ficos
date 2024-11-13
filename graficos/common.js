@@ -1,14 +1,12 @@
-const data = [
-    {
-      x: 'nomeDasRedes',
-      y: quantidadeDeUsuarios,
-      type: 'bar',
-      marker: {
-        color: getCSS('--primary-color')
-      }
-    }
-  ]
-const layout = {
-    plot_bgcolor: getCSS('--bg-color'),
-    paper_bgcolor: getCSS('--bg-color')
+const getCSS = (variavel) => {
+  const bodyStyle = getComputedStyle(document.body)
+  return bodyStyle.getPropertyValue(variavel)
 }
+
+const tickConfig = {
+  family: getCSS('--font'),
+  size: 16,
+  color: getCSS('--primary-color')
+}
+
+export {getCSS, tickConfig}
